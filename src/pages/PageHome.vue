@@ -21,7 +21,7 @@
         </q-card-section>
 
         <q-card-section>
-          Ali's Nutrition and Sports Therapy supports you to reach your optimal health and well-being. 
+          Ali's Nutritionnnn and Sports Therapy supports you to reach your optimal health and well-being. 
           Using her extensive knowledge, qualifications and experience, Ali will guide you to reach your goals.
         </q-card-section>
         <q-card-section>
