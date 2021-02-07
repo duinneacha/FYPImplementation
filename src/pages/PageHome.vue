@@ -2,7 +2,7 @@
   <q-page class="bg-green-2 constrain">
    <div class="row q-pa-md logo-banner">
       <q-img
-        src="../assets/ali_logo.png"
+        src="../assets/MTU_Logo_Colour_RGB_300dpi.jpg"
         class="ali-logo"
       />
    </div>
@@ -11,11 +11,12 @@
 
       <q-card
         class="my-card text-grey-2 text-center full-width"
-        style="background-color: #94236E; color: #4FB854"
+        style="background-color: #3d97eb; color: #ebe53d"
         
       >
         <q-card-section>
-          <div class="text-h6">NUTRITION & NEUROMUSCULAR SPORTS THERAPIST</div>
+          <div class="text-h6">AD FYP IMPLEMENTATION</div>
+          <div class="text-h8">NUTRITION & NEUROMUSCULAR SPORTS THERAPIST</div>
           <div class="text-subtitle2">Ali Dorgan Dip NT, BA Soc. Sc. Member NTOI, Member Thyroid Nutrition Ireland.</div>
         </q-card-section>
 
