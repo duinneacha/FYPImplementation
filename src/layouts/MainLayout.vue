@@ -18,16 +18,22 @@
           
         </q-toolbar-title>
 
-        <div class="bg-grey-5">
+        <q-btn
+          to="/auth"
+          flat
+          label="Login"
+          icon="account_circle"/>
+
+        <!-- <div class="bg-grey-5"> -->
 
           
-          <q-btn color="grey-8 large-screen-only" type="e" icon="email" href="email:alinutrition@gmail.com">alinutrition@gmail.com</q-btn>
-          <q-btn class="q-ml-md large-screen-only" color="grey-8" type="a" icon="phone" href="tel:0877727580">087 7727580</q-btn>
+          <!-- <q-btn color="grey-8 large-screen-only" type="e" icon="email" href="email:alinutrition@gmail.com">alinutrition@gmail.com</q-btn> -->
+          <!-- <q-btn class="q-ml-md large-screen-only" color="grey-8" type="a" icon="phone" href="tel:0877727580">087 7727580</q-btn> -->
           
 
           <!-- <p><q-icon class="q-pr-sm" name="email" />alisnutrition@gmail.com</p>
           <p><q-icon class="q-pr-sm" name="phone" />087 7727580</p> -->
-        </div>
+        <!-- </div> -->
       </q-toolbar>
     </q-header>
 
@@ -153,5 +159,8 @@ export default {
 </script>
 
 <style >
-
+.logo-title {
+  /* color: red; */
+  font-size: .7em;
+}
 </style>

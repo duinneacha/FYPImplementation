@@ -13,7 +13,8 @@ const routes = [
       { path: '/contact', component: () => import('pages/PageContact.vue') },
       { path: '/nutritionQuestionnaire', component: () => import('pages/PageQuestionnaire.vue') },
       { path: '/testimonials', component: () => import('pages/PageTestimonials.vue') },
-      { path: '/recipes', component: () => import('pages/PageRecipes.vue') }
+      { path: '/recipes', component: () => import('pages/PageRecipes.vue') },
+      { path: '/auth', component: () => import('pages/PageAuth.vue') }
     ]
   },
 
