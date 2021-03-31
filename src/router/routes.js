@@ -14,6 +14,8 @@ const routes = [
       { path: '/nutritionQuestionnaire', component: () => import('pages/PageQuestionnaire.vue') },
       { path: '/testimonials', component: () => import('pages/PageTestimonials.vue') },
       { path: '/recipes', component: () => import('pages/PageRecipes.vue') },
+      { path: '/admin', component: () => import('pages/Administrator.vue') },
+      { path: '/client', component: () => import('pages/Client.vue') },
       { path: '/auth', component: () => import('pages/PageAuth.vue') }
     ]
   },
