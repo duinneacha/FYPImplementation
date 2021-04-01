@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: ['tab'],
   data() {
@@ -62,6 +64,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('auth', ['registerUser', 'loginUser']),
     submitForm() {
       
       this.$refs.email.validate()
@@ -75,48 +78,27 @@ export default {
           this.loginUser(this.formData)
         } else {
           console.log("Registerr the user");
+          this.registerUser(this.formData)
         }
       } else {
         console.log("Not Registering user at this stage");
       }
     },
-    loginUser(formData) {
-      console.log("Username:", this.formData.email)
-      console.log(this.formData.password)
-
-      console.log(process.env.API)
+    
     
     // let adTest = {
     //   email: this.formData.email,
     //   password: this.formData.password
     // }
 
-    if (this.formData.email == "admin@admin.com") {
-      console.log("admin@admin.com")
-      this.$router.push('/admin')
-    } else {
-      this.$router.push('/client')
-    }
+    // if (this.formData.email == "admin@admin.com") {
+    //   console.log("admin@admin.com")
+    //   this.$router.push('/admin')
+    // } else {
+    //   this.$router.push('/client')
+    // }
 
-    // console.log(loginFormData.email)
-    // this.$axios.post(`${process.env.API}/loginUser`, adTest).then(response => {
-    //   console.log('response : ', response)
-    //   this.$q.notify({
-    //       color: 'green-4',
-    //       textColor: 'white',
-    //       icon: 'cloud_done',
-    //       message: 'Submitted Thank You!'
-    //    })
     
-    // }).catch(error => {
-    //     console.log(error)
-    //     this.$q.dialog({
-    //       title: 'Error',
-    //       message: 'Sorry, could not create post'
-    //     })
-    
-    //   })
-    },
     isValidEmailAddress(email) {
       
       // This validation routing was picked up on StackOverflow at the following link:- https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
