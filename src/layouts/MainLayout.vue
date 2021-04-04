@@ -19,21 +19,22 @@
         </q-toolbar-title>
 
         <q-btn
+          v-if="!loggedIn"
           to="/auth"
           flat
           label="Login"
+          class="absolute-right"
+          icon="account_circle"/>
+        
+        <q-btn
+          v-else
+          @click='logoutUser'
+          flat
+          label="Logout"
+          class="absolute-right"
           icon="account_circle"/>
 
-        <!-- <div class="bg-grey-5"> -->
 
-          
-          <!-- <q-btn color="grey-8 large-screen-only" type="e" icon="email" href="email:alinutrition@gmail.com">alinutrition@gmail.com</q-btn> -->
-          <!-- <q-btn class="q-ml-md large-screen-only" color="grey-8" type="a" icon="phone" href="tel:0877727580">087 7727580</q-btn> -->
-          
-
-          <!-- <p><q-icon class="q-pr-sm" name="email" />alisnutrition@gmail.com</p>
-          <p><q-icon class="q-pr-sm" name="phone" />087 7727580</p> -->
-        <!-- </div> -->
       </q-toolbar>
     </q-header>
 
@@ -86,6 +87,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
@@ -95,12 +97,6 @@ const linksData = [
     icon: 'home',
     link: '#/'
   },
-  // {
-  //   title: 'About Ali',
-  //   caption: 'More about Ali (Anneline) Dorgan',
-  //   icon: 'face',
-  //   link: '#/about'
-  // },
   {
     title: 'Nutrition',
     caption: 'Learn all about Alis Nutrition services',
@@ -142,6 +138,19 @@ const linksData = [
     caption: 'Some nutritious recipes',
     icon: 'menu_book',
     link: '#/recipes'
+  },
+  {
+    title: 'Administrator',
+    caption: 'Admistrator functions',
+    icon: 'admin_panel_settings',
+    link: '#/admin',
+    condition: 'loggedIn'
+  },
+  {
+    title: 'Client',
+    caption: 'Client Section',
+    icon: 'person_pin',
+    link: '#/client'
   }
 
 ];
@@ -154,6 +163,12 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: linksData
     }
+  },
+  computed: {
+    ...mapState('auth',['loggedIn'])
+  },
+  methods: {
+    ...mapActions('auth', ['logoutUser'])
   }
 }
 </script>

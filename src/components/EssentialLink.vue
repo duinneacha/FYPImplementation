@@ -43,6 +43,11 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+
+    condidion: {
+      type: String,
+      detault: ''
     }
   }
 }

@@ -15,6 +15,11 @@ const routes = [
       { path: '/testimonials', component: () => import('pages/PageTestimonials.vue') },
       { path: '/recipes', component: () => import('pages/PageRecipes.vue') },
       { path: '/admin', component: () => import('pages/Administrator.vue') },
+      { path: '/adminClients', component: () => import('pages/admin/admin-clients.vue') },
+      { path: '/adminClinic', component: () => import('pages/admin/admin-clinic.vue') },
+      { path: '/adminNotif', component: () => import('pages/admin/admin-notifications.vue') },
+      { path: '/adminRecipes', component: () => import('pages/admin/admin-recipes.vue') },
+      { path: '/adminClasses', component: () => import('pages/admin/admin-classes.vue') },
       { path: '/client', component: () => import('pages/Client.vue') },
       { path: '/auth', component: () => import('pages/PageAuth.vue') }
     ]
