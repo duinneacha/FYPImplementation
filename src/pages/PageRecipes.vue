@@ -8,7 +8,7 @@
       />
    </div>
 
-      <div class="row constrain bg-red-2">
+      <div class="row constrain">
 
         <q-list bordered class="rounded-borders q-mt-lg col">
           <q-toolbar class="bg-primary text-white shadow-2 text-center">
