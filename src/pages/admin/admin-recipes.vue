@@ -63,17 +63,33 @@
                   transition-hide="slide-down">
           <add-recipe />
         </q-dialog>
+        
+        <q-dialog v-model="showEditRecipe" 
+                  persistent
+                  :maximized="maximizedToggle"
+                  transition-show="slide-up"
+                  transition-hide="slide-down">
+          <edit-recipe
+            @close="showEditRecipe = false"
+            :recipe="recipe"
+           />
+        </q-dialog>
+
+
+
   </q-page>
 </template>
 
 <script>
 export default {
+  props: ['recipeItem'],
   name: 'AdminRecipes',
     data() {
       return {
       showEditRecipe: false,
       maximizedToggle: true,
-      showAddRecipe: true,
+      showAddRecipe: false,
+      recipe: {},
       noImageUrl: './assets/No-image-available.png',
       recipeData: [
       {
@@ -160,7 +176,6 @@ export default {
           '½ cup baby spinach.',
           '½ cup unsweetened almond milk.',
           'Optional: 1-2 basil leaves, 2-3 mint leaves, ½ teaspoon peeled, chopped ginger.',
-          '',
           'Option 2:',
           'cup frozen unsweetened raspberries',
           '¾ cup chilled unsweetened almond or rice milk',
@@ -168,7 +183,6 @@ export default {
           '1½ Tbsp honey',
           '2 tsp finely grated fresh ginger1 tsp ground flaxseed ',
           'squeeze fresh lemon juice',
-          '',
           'Option 3 (my favourite)',
           '1 large handful frozen rasperries blended on their own first',
           'Add 200ml kokonut milk, 1 tablespoon tahini, 1 scoop whey protein, 1 tablespoon almond butter and blitz with 1 tsp honey ',
@@ -270,11 +284,13 @@ export default {
     showObject(item) {
       console.log("In showObject . . . .")
       console.log(item)
+      this.recipe = item
       this.showEditRecipe = true
     }
   },
   components: {
-    'add-recipe': require('components/modals/add-recipe.vue').default
+    'add-recipe': require('components/modals/add-recipe.vue').default,
+    'edit-recipe': require('components/modals/edit-recipe.vue').default
   }
 }
 </script>

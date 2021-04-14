@@ -4,7 +4,7 @@
       <q-card-section class="row">
         
         <q-toolbar class="bg-primary text-white">
-           <q-toolbar-title>Add Recipe</q-toolbar-title>
+           <q-toolbar-title>Edit Recipe</q-toolbar-title>
               <q-space />
               <q-btn 
                 v-close-popup
@@ -20,7 +20,7 @@
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        <div class="camera-frame q-pa-md">
+        <div class="camera-frame q-ma-lg">
           <canvas
             v-show="imageCaptured"
             ref="canvas"
@@ -259,6 +259,7 @@
 
 <script>
 export default {
+  props: ['recipe'],
   data() {
     return {
       imageUpload: [],
@@ -270,14 +271,7 @@ export default {
       line_instruction: '',
       line_ingredient: '',
       editIndex: null,
-      Recipe: {
-        'title': '',
-        'description': '',
-        'benefits': '',
-        'imageUrl': null,
-        'ingredients': [],
-        'instructions': []
-      }
+      Recipe: {}
     }
   },
   methods: {
@@ -347,13 +341,14 @@ export default {
       console.log("In deleteInstruction . . .")
             this.showDeleteIngredient = false
        this.$q.dialog({
-        title: 'Confirm',
+        title: 'Confirm Delete',
         message: 'Would you like to Delete this Instruction?',
         ok: {
+          color: 'negative',
           push: true
         },
         cancel:{
-          color: 'negative'
+          color: 'primary'
         },
         persistent: false
       }).onOk(() => {
@@ -370,13 +365,14 @@ export default {
       console.log("In deleteIngredient . . .", indx)
       this.showDeleteIngredient = false
        this.$q.dialog({
-        title: 'Confirm',
+        title: 'Confirm Delete',
         message: 'Would you like to Delete this Ingredient?',
         ok: {
+          color: 'negative',
           push: true
         },
         cancel:{
-          color: 'negative'
+          color: 'primary'
         },
         persistent: false
       }).onOk(() => {
@@ -397,6 +393,11 @@ export default {
   },
   components: {
     // 'recipe-instructions': require('components/recipes/recipe-instructions.vue').default
+  },
+  mounted() {
+    this.Recipe = Object.assign({}, this.recipe)
+    console.log("edit-recipe mounted()")
+    console.log(this.recipe)
   }
   
 }
